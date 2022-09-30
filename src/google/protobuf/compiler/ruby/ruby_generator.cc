@@ -409,6 +409,12 @@ int GeneratePackageModules(const FileDescriptor* file, io::Printer* printer) {
   bool need_change_to_module = true;
   std::string package_name;
 
+  printer->Print(
+    "module $name$\n",
+    "name", "Hoge");
+  printer->Indent();
+  levels++;
+
   // Determine the name to use in either format:
   //   proto package:         one.two.three
   //   option ruby_package:   One::Two::Three
@@ -451,8 +457,19 @@ int GeneratePackageModules(const FileDescriptor* file, io::Printer* printer) {
       "module $name$\n",
       "name", component);
     printer->Indent();
+
+    // for (int j = 0; j < (1 + 300); ++j) { printf ("#"); }; printf ("\n");
+    // for (int j = 0; j < (1 + 300); ++j) { printf ("#"); }; printf ("\n");
+    // for (int j = 0; j < (1 + 300); ++j) { printf ("#"); }; printf ("\n");
+    // for (int j = 0; j < (1 + 300); ++j) { printf ("#"); }; printf ("\n");
+    // for (int j = 0; j < (1 + 300); ++j) { printf ("#"); }; printf ("\n");
+    // for (int j = 0; j < (1 + 300); ++j) { printf ("#"); }; printf ("\n");
+    // std::cout << "component is: " << component << "\n";
+
+
     levels++;
   }
+
   return levels;
 }
 
